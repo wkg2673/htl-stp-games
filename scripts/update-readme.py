@@ -6,9 +6,11 @@ readme_file = Path("README.md")
 contributors = contributors_file.read_text().splitlines()
 
 contributor_list = "\n".join(
-    f"- {name.strip()}"
-    for name in contributors
-    if name.strip()
+    f"[{parts[0].strip()}]({parts[1].strip()})"
+    for line in contributors
+    if line.strip()
+    for parts in [line.split(" - ", 1)]
+    if len(parts) == 2
 )
 
 readme = readme_file.read_text()
