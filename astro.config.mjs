@@ -3,8 +3,8 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://htl-stp-games.onrender.com',
-  base: '/',
+	site: 'https://htl-stp.github.io',
+	base: '/games/',
 	vite: {
 		resolve: {
 			alias: {
