@@ -5,7 +5,7 @@ Part of "HTLSTP, but better!"
 
 URL: [https://htl-stp-games.onrender.com/](https://htl-stp-games.onrender.com/)
 
-**WARNING: update astro.config.mjs if you want to deploy this elsewhere than on [Render](https://onrender.com/)!**
+**WARNING: update astro.config.mjs if you want to deploy this elsewhere than on GitHub!**
 
 ## Credits
 
