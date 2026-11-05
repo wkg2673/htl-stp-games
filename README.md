@@ -3,7 +3,9 @@
 A collection of various free Arcade-like games, by Students for Students.  
 Part of "HTLSTP, but better!"
 
-URL: https://htl-stp.github.io/games
+URL: [https://htl-stp-games.onrender.com/](https://htl-stp-games.onrender.com/)
+
+**WARNING: update astro.config.mjs if you want to deploy this elsewhere than on [Render](https://onrender.com/)!**
 
 ## Credits
 
