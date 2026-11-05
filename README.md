@@ -9,10 +9,10 @@ URL: https://htl-stp.github.io/games
 
 Contributors:
 <!-- CONTRIBUTORS_START -->
-- daftvoid
-- SirMops123
-- LabW0lf
-- wkg2673
+[daftvoid](https://github.com/daftvoid)
+[SirMops123](https://github.com/SirMops123)
+[LabW0lf](https://github.com/LabW0lf)
+[wkg2673](https://github.com/wkg2673)
 <!-- CONTRIBUTORS_END -->
 
 Songs by [LabW0lf](https://github.com/labw0lf)
