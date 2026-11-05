@@ -5,12 +5,8 @@ Part of "HTLSTP, but better!"
 
 URL: https://htl-stp.github.io/games
 
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
 ## Credits
 
-All game contributors are in [list of contributors](https://github.com/htl-stp/games/blob/main/src/assets/contributors)
+All game contributors are in [list of contributors](https://github.com/wkg2673/htl-stp-games/blob/main/src/assets/contributors)
 
 Songs by [LabW0lf](https://github.com/labw0lf)
