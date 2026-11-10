@@ -1,3 +1,4 @@
+
 name: Sync with upstream games
 
 on:
@@ -23,8 +24,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Save astro config file
+          # Backup protected files and directories
           cp astro.config.mjs /tmp/astro-config-backup
+          cp -a .github /tmp/github-backup
 
           # Fetch upstream
           git remote add upstream https://github.com/htl-stp/games.git
@@ -33,10 +35,14 @@ jobs:
           # Merge upstream changes
           git merge upstream/master -X theirs --no-edit
 
-          # Restore astro config
+          # Restore protected files and directories
           cp /tmp/astro-config-backup astro.config.mjs
+          rm -rf .github
+          cp -a /tmp/github-backup .github
 
-          # Commit and push
-          git add astro.config.mjs
-          git diff --cached --quiet || git commit -m "Restore custom astro.config.mjs"
+          # Commit protected files
+          git add astro.config.mjs .github/
+          git diff --cached --quiet || git commit -m "Preserve custom files and GitHub workflows"
+
+          # Push changes
           git push origin HEAD:master
