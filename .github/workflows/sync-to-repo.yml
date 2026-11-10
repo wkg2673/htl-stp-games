@@ -1,0 +1,42 @@
+name: Sync with upstream games
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout fork
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync with upstream
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Save astro config file
+          cp astro.config.mjs /tmp/astro-config-backup
+
+          # Fetch upstream
+          git remote add upstream https://github.com/htl-stp/games.git
+          git fetch upstream
+
+          # Merge upstream changes
+          git merge upstream/master -X theirs --no-edit
+
+          # Restore astro config
+          cp /tmp/astro-config-backup astro.config.mjs
+
+          # Commit and push
+          git add astro.config.mjs
+          git diff --cached --quiet || git commit -m "Restore custom astro.config.mjs"
+          git push origin HEAD:master
