@@ -26,6 +26,7 @@ jobs:
 
           # Backup protected files and directories
           cp astro.config.mjs /tmp/astro-config-backup
+          cp README.md /tmp/readme-backup
           cp -a .github /tmp/github-backup
 
           # Fetch upstream
@@ -37,11 +38,12 @@ jobs:
 
           # Restore protected files and directories
           cp /tmp/astro-config-backup astro.config.mjs
+          cp /tmp/readme-backup README.md
           rm -rf .github
           cp -a /tmp/github-backup .github
 
           # Commit protected files
-          git add astro.config.mjs .github/
+          git add astro.config.mjs README.md .github/
           git diff --cached --quiet || git commit -m "Preserve custom files and GitHub workflows"
 
           # Push changes
