@@ -47,8 +47,8 @@ jobs:
           cp -a /tmp/github-backup .github
 
           # Commit protected files
-          git add astro.config.mjs README.md .github/
-          git diff --cached --quiet || git commit -m "Preserve custom files and GitHub workflows"
+          git add astro.config.mjs README.md CONTRIBUTING.md src/assets/contributors .github/
+          git diff --cached --quiet || git commit -m "Preserve custom files and workflows"
 
           # Push changes
           git push origin HEAD:master
